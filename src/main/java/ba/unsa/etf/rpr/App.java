@@ -17,15 +17,19 @@ public class App {
     public static void main( String[] args ) {
 
         System.out.println("Please enter some numbers, when you're finished enter stop");
-        List<Double> list = getList();
 
-        Collections.sort(list);
-        System.out.println(list);
-        System.out.println("The minimum element of the list is: " + getMin(list));
-        System.out.println("The maximum element of the list is: " + getMax(list));
-        System.out.println("The mean element of the list is: " + getMean(list));
-        System.out.println("The average value of the list is: " + getAverageValueOfTheList(list));
-        System.out.println("The standard deviation of the list is: " + getStandardDeviation(list));
+        List<Double> list = new ArrayList<>(getList());
+        if(list.size() == 0){
+            System.out.println("You've not typed in a single element, BYE!");
+        } else {
+            Collections.sort(list);
+            System.out.println(list);
+            System.out.println("The minimum element of the list is: " + getMin(list));
+            System.out.println("The maximum element of the list is: " + getMax(list));
+            System.out.println("The mean element of the list is: " + getMean(list));
+            System.out.println("The average value of the list is: " + getAverageValueOfTheList(list));
+            System.out.println("The standard deviation of the list is: " + getStandardDeviation(list));
+        }
 
     }
 
