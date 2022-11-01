@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr;
 
 import java.util.*;
 
+
 /**
  * Program that takes multiple number input nd return
  * min, max, mean value, average and standard deviation
@@ -35,9 +36,26 @@ public class App {
     private static List<Double> getList(){
         Scanner in = new Scanner(System.in);
         List<Double> list = new ArrayList<>();
-        for(String userInput = in.nextLine(); !userInput.equals("stop"); userInput = in.nextLine())
+        for(String userInput = in.nextLine(); !userInput.equals("stop"); userInput = in.nextLine()) {
+            if(!isParsableToDouble(userInput))
+                continue;
             list.add(Double.parseDouble(userInput));
+        }
         return list;
+    }
+
+    /**
+     * Method that checks if a String is parsable to Double
+     * @param string that represents a number
+     * @return true if parsable, false if not
+     */
+    private static boolean isParsableToDouble(String string){
+        try{
+            Double.parseDouble(string);
+        }catch (NumberFormatException e){
+            return false;
+        }
+        return true;
     }
 
     /**
