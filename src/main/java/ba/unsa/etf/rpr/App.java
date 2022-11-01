@@ -30,7 +30,7 @@ public class App {
     }
 
     /**
-     * A method tha lets you type in a List
+     * A method tha lets you type in a List of numbers
      * @return List<Double>
      */
     private static List<Double> getList(){
@@ -99,9 +99,9 @@ public class App {
      * @param list a collection of Doubles
      * @return sum of the collection
      */
-    private static Double getSumOfTheList(List<Double> list){
-        Double suma = 0.;
-        for(Double elem : list)
+    private static double getSumOfTheList(List<Double> list){
+        double suma = 0.;
+        for(double elem : list)
             suma = suma + elem;
         return suma;
     }
@@ -130,10 +130,10 @@ public class App {
      * @param list sorted list
      * @return sum of squared distances from average value
      */
-    private static Double getSumOfSquaredDistancesFromAverageValue(List<Double> list){
-        Double average = getAverageValueOfTheList(list);
-        Double suma = 0.;
-        for (Double elem : list)
+    private static double getSumOfSquaredDistancesFromAverageValue(List<Double> list){
+        double average = getAverageValueOfTheList(list);
+        double suma = 0.;
+        for (double elem : list)
             suma = suma + getSquaredDistanceFromAverageValue(average, elem);
 
         return suma;
